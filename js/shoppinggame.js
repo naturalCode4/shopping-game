@@ -1,14 +1,56 @@
+console.log('shoppinggame.js running')
+
 let gameComplete = false;
 // Define the three constants here
 
+const name = "unknown"
+const score = 0
+const items = 0
+
 // Define the player object here
+
+const player = {
+    name: name,
+    score: score,
+    items: items,
+    getCurrentScore() {return this.score},
+    addPoints(points) {this.score += points},
+    deductPoints(points) {this.score -= points}
+}
 
 // Define the Product class - write the Constructor function for Product class here
 
+class Product {
+    id;
+    name;
+    price;
+    expiryDate;
+    constructor(id, name, price, expiryDate) {
+        this.id = id;
+        this.name = name;
+        this. price = price;
+        this.expiryDate = expiryDate
+    }
+}
+
 // Complete the dateDiff function
-const dateDiff = (date1, date2) => {};
+const dateDiff = (date1, date2) => {
+    // console.log(((new Date(date2)).getTime() - (new Date(date1)).getTime())/3600000, 'hours between dates')
+    return ((new Date(date2)).getTime() - (new Date(date1)).getTime())/3600000
+};
+
+// // example date
+// let date_1 = 'July 20, 99 20:17:40'
+// let date_2 = Date.now()
+// console.log(dateDiff(date_1, date_2))
 
 // Here, use Object.defineProperty to create property - daysToExpire
+
+Object.defineProperty(Product, 'daysToExpire', {
+    getDaysToExpire : function () {
+        return this.daysToExpire
+    }
+})
 
 // Add method getDetails to Product here
 
@@ -307,9 +349,9 @@ function init(data) {
     };
 
     // Uncomment this function once you fully implement the game to be able to run it
-    // (function setGameCompleteFlag(){
-    //     gameComplete = true;
-    // })();
+    (function setGameCompleteFlag(){
+        gameComplete = true;
+    })();
 
     function main() {
         let products = loadMasterData();
@@ -318,6 +360,7 @@ function init(data) {
 
 
 
+const { timeStamp } = require("console");
     ///////////////////////////////////////////////////////////////
     const readline = require("readline");
     require('colors');

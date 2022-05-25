@@ -2,7 +2,7 @@
   "name": "javascript-oo-shopping-game",
   "version": "1.0.0",
   "description": "Build a Shopping Game with Object Oriented Javascript - https://pluralsight.com",
-  "main": "shoppinggame.js",
+  "main": "js/shoppinggame.js",
   "directories": {
     "test": "test"
   },
